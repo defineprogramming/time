@@ -6,7 +6,7 @@ function MainComponent() {
   const [clockColor, setClockColor] = React.useState("#FFFFFF");
   const [backgroundColor, setBackgroundColor] = React.useState("#010101");
   const [clockSize, setClockSize] = React.useState(
-    window.innerWidth < 640 ? 60 : 120
+    window.innerWidth < 640 ? 100 : 200
   );
   const [fontFamily, setFontFamily] = React.useState("font-roboto");
   const [versionInfo] = React.useState({
@@ -18,7 +18,7 @@ function MainComponent() {
       setCurrentTime(new Date());
     }, 1);
     const handleResize = () => {
-      setClockSize(window.innerWidth < 640 ? 60 : 120);
+      setClockSize(window.innerWidth < 640 ? 100 : 200);
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -99,8 +99,8 @@ function MainComponent() {
                   type="range"
                   id="clockSize"
                   name="clockSize"
-                  min="12"
-                  max="200"
+                  min="100"
+                  max="400"
                   value={clockSize}
                   onChange={handleClockSizeChange}
                   className="form-range w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
@@ -142,7 +142,7 @@ function MainComponent() {
         >
           <div className="text-gray-900 dark:text-white text-3xl p-3">
             <i
-              className={`fas ${isSidePanelOpen ? "fa-times" : "fa-cogs"}`}
+              className={`fas ${isSidePanelOpen ? "fa-times" : "fa-bars"}`}
             ></i>
           </div>
         </div>
